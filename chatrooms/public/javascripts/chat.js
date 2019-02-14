@@ -42,10 +42,3 @@ Chat.prototype.proceseCommand = function(command) {
     }
     return message;
 };
-
-function divEscapedContentsElement(message) {
-    return $('<div></div>').text(massage);
-}
-
-function divSystemContent(message)
-    return $('<div></div>').html('<i>' + message + '</i>');
