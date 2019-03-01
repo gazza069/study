@@ -5,7 +5,7 @@ import './Stopwatch.css'
 class Stopwatch extends Component {
     constructor (props) {
         super(props)
-        this.state = { //　初期値を設定
+        this.state = { // 初期値を設定
             isLive: false,
             curTime: 0,
             startTime: 0
@@ -31,7 +31,7 @@ class Stopwatch extends Component {
     }
     // 開始・停止ボタンを押した時
     clickHandler (e) {
-        //　停止するとき
+        // 停止するとき
         if (this.state.isLive) {
             this.setState({isLive: false})
             return
