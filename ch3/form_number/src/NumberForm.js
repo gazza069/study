@@ -9,7 +9,7 @@ export default class NumberForm extends Component {
     doChange (e) {
         const curValue = e.target.value
         // 数字以外は削除
-        const newValue = curValue.replace(/[^0-9]g, '')
+        const newValue = curValue.replace(/[^0-9]/g, '')
         this.setState({value: newValue})
     }
     // 送信ボタンが押された時
