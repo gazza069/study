@@ -54,12 +54,13 @@ export default class FormInput extends Component {
     render () {
         const msg = this.renderStatusMessage()
         return (<div>
-            <label>｛this.props.label}: <br />
+            <label>{this.props.label}: <br />
                 <input type='text'
                     name={this.props.name}
                     placeholder={this.props.placeholder}
                     value={this.state.value}
                     onChange={e => this.handleChange(e)} />
+                {msg}
             </label>
         </div>)
     }
@@ -97,7 +98,7 @@ FormInput.propTypes = {
 }
 
 // プロパティの初期値を定義
-FormInput.dedaultProps = {
+FormInput.defaultProps = {
     filter: null,
     pattern: null,
     value: '',
