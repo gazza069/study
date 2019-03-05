@@ -1,0 +1,24 @@
+{
+  "name": "electron-hello",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "webpack --mode development --open"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.5",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "electron": "^4.0.7",
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.2.3"
+  }
+}

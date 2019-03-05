@@ -42,6 +42,6 @@ class SelectForm extends React.Component {
 ReactDOM.render(
     <SelectForm
         items={['チョコ','梅干し','ラムネ']}
-        value='ラムネ' />
+        value='ラムネ' />,
     document.getElementById('root')
 )
