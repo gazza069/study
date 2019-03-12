@@ -26,7 +26,7 @@ const externalPlugins = new webpack.ExternalsPlugin('commonjs', [
 
 module.exports = {
     entry: {
-        index: path.join(__dirname, 'src', 'index.js')
+        index: path.join(__dirname, 'src', '/index.js')
     },
     output: {
         path: path.join(__dirname, 'out'),
@@ -39,9 +39,9 @@ module.exports = {
             {
                 test: /.js$/,
                 loader: 'babel-loader',
-                options: {
+                /*options: {
                     presets: ['es2015', 'react']
-                }
+                }*/
             }
         ]
     },
