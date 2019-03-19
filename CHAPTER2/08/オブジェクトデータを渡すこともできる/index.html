@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>Vue.js App</title>
+    <link href="main.css" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <img v:bind:src="item.src" v-bind:alt="item.alt" v-bind:width="item.width" v-bind:height="item.height">
+        <img v:bind="item">
+        <img v:bind="item" v-bind:id="'thumb-' + item.id">
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

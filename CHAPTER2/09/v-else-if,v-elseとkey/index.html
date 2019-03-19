@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>Vue.js App</title>
+    <link href="main.css" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <!-- 2つのdivが違う要素だと明示的にする -->
+        <div v-if="loaded" key="content-visible">
+            content
+        </div>
+        <div v-else key="content-loading">
+            loading now...
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
