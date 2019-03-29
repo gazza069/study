@@ -7,7 +7,12 @@
 </head>
 <body>
     <div id="app">
-        <input v-bind:value="message" v-on:input="handleInput">
+        <select v-model="val">
+            <option disabled="disabled">選択して下さい</option>
+            <option value="a">A</option>
+            <option value="b">B</option>
+            <option value="c">C</option>
+        </select>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
     <script src="main.js"></script>

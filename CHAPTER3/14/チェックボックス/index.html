@@ -7,7 +7,10 @@
 </head>
 <body>
     <div id="app">
-        <input v-bind:value="message" v-on:input="handleInput">
+        <label>
+            <input type="checkbox" v-model="val"> {{ val }} <br>
+            <input type="checkbox" v-model="val2" true-value="yes" false-value="no"> {{ val2 }}
+        </label>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
     <script src="main.js"></script>
