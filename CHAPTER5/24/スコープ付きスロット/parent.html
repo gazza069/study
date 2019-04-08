@@ -7,9 +7,11 @@
 </head>
 <body>
     <div id="app">
-        <ul>
-            <comp-child v-vind="object"></comp-child>
-        </ul>
+        <comp-child>
+            <p slot-scope="props">
+                スロットから受け取ったtext → {{ props.text }}
+            </p>
+        </comp-child>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
     <script src="main.js"></script>

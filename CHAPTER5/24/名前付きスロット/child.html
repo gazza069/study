@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>Vue.js App</title>
+    <link href="main.css" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <section class="comp-child">
+            <header>
+                <slot name="header">デフォルトタイトル</slot>
+            </header>
+            <div class="content">
+                <slot>デフォルトコンテンツ</slot>
+            </div>
+            <slot name="footer">
+                <!-- なければ何も表示しない -->
+            </slot>
+        </section>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

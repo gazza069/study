@@ -1,0 +1,18 @@
+/* トランジション中有効にするCSSのtransitionプロパティ */
+.v-enter-active, .v-leave-active {
+    transition: opacity 1s;
+}
+/* 表示される時は0から1へ */
+.v-enter {
+    opacity: 0;
+}
+.v-enter-to {
+    opacity: 1;
+}
+/* 消える時は1から0へ */
+.v-leave {
+    opacity: 1;
+}
+.v-leave-to {
+    opacity: 0;
+}

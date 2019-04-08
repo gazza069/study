@@ -7,9 +7,8 @@
 </head>
 <body>
     <div id="app">
-        <ul>
-            <comp-child v-vind="object"></comp-child>
-        </ul>
+        <button v-on:click="current^=1">toggle</button>
+        <div v-bind:is="component"></div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
     <script src="main.js"></script>

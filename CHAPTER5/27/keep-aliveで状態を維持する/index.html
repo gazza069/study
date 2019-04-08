@@ -7,9 +7,11 @@
 </head>
 <body>
     <div id="app">
-        <ul>
-            <comp-child v-vind="object"></comp-child>
-        </ul>
+        <button v-on:click="current='comp-board'">メッセージ一覧</button>
+        <button v-on:click="current='comp-form'">投稿フォーム</button>
+        <keep-alive>
+            <div v-bind:is="current"></div>
+        </keep-alive>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
     <script src="main.js"></script>

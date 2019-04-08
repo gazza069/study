@@ -9,6 +9,24 @@ Vue.component('example', {
             type: String,
             required: true
         },
-        
+        // デフォルト値
+        propD: {
+            type: Number,
+            default: 100
+        }
+        // オブジェクトと配列のデフォルトは
+        // ファクトリ関数から返すようにしています
+        propE: {
+            type: object,
+            default: function() {
+                return { message: 'hello' }
+            }
+        },
+        // カスタムバリデータ関数
+        propF: {
+            validator: function(value) {
+                return value > 10
+            }
+        }
     }
 })

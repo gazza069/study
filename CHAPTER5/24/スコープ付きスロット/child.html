@@ -7,9 +7,9 @@
 </head>
 <body>
     <div id="app">
-        <ul>
-            <comp-child v-vind="object"></comp-child>
-        </ul>
+        <div class="comp-child">
+            <slot text="Hello!"></slot>
+        </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
     <script src="main.js"></script>
