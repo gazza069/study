@@ -1,0 +1,12 @@
+.v-enter-active, .v-leave-active {
+    transition: opacity 1s, transform 1s;
+}
+.v-leave-active {
+    position: absolute;
+}
+.v-move:not(.v-leave-active) {
+    transition: transform 1s; /* これが優先されてしまう */
+}
+.v-enter, .v-leave-to {
+    opacity: 0;
+}
