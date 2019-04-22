@@ -1,0 +1,42 @@
+<script src="https://unpkg.com/vue@2.5.17"></script>//
+<link rel="stylesheet" type="text/css" href="./style.css"></link>
+
+<div id="fruits-list">
+    <page-header>
+        <h1 slot="header">冬の果物</h1>
+    </page-header>
+    <ul>
+        <li>りんご</li>
+        <li>イチゴ</li>
+    </ul>
+</div>
+
+<page>
+    <page-header></page-header>
+    <!-- ページのコンテンツ -->
+</page>
+
+<script>
+var headerTemplate = `
+    <div>
+        <slot name="header">No Title</slot>
+    </div>
+`
+
+var contentTemplate = `
+    <div>
+        <slot name="content">No Contents</slot>
+    </div>
+`
+
+Vue.component('page-header', {
+    template: headerTemplate
+})
+Vue.component('page-content', {
+    template: contentTemplate
+})
+
+new Vue({
+    el: "#fruits-list"
+})
+</script>
