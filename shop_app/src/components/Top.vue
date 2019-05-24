@@ -2,7 +2,7 @@
   <div class="contents">
     <nav class="gnavi">
       <ul>
-        <li>Topページ</li>
+        <li><span>ページ</span></li>
         <li><router-link to="/kouenji">高円寺</router-link></li>
         <li><router-link to="/other">その他</router-link></li>
       </ul>

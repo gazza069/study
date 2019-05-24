@@ -3,7 +3,7 @@
     <nav class="gnavi">
       <ul>
         <li><router-link to="/">Topページ</router-link></li>
-        <li>高円寺</li>
+        <li><span>高円寺</span></li>
         <li><router-link to="/other">その他</router-link></li>
       </ul>
     </nav>
