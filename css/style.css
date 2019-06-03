@@ -1,0 +1,10 @@
+.p-post-follow__radio01,
+.p-post-follow__radio02,
+.p-post-follow__radio03 {
+    display: none;
+}
+
+._is_active {
+    display: block;
+}
+
