@@ -1,7 +1,19 @@
-.p-post-follow__radio01,
-.p-post-follow__radio02,
-.p-post-follow__radio03 {
+.slide {
+    width: 200px;
+    padding: 20px;
+    box-sizing: border-box;
     display: none;
+    margin: 0 auto;
+    background: #efefef;
+}
+
+.p-post-follow__complete {
+    width: 200px;
+    padding: 20px;
+    box-sizing: border-box;
+    display: none;
+    margin: 0 auto;
+    background: #efefef;
 }
 
 ._is_active {
