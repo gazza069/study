@@ -155,7 +155,7 @@ $(function () {
 	});
 
 	//ページャー関連
-	$(".p-post-follow__question_slide_pager-bt_01").on("click",function(){
+	$(".p-post-follow__question_slide_pager-bt_01,.p-post-follow__question_slide_pager-bt_prev01").on("click",function(){
 		$groupe03.removeClass(a);
 		setTimeout(function(){
 			$groupe02.addClass(a);
@@ -169,13 +169,6 @@ $(function () {
 	$(".p-post-follow__question_slide_pager-bt_03").on("click",function(){
 		$slide.slick('slickGoTo', 1);
   });
-    
-	$(".p-post-follow__question_slide_pager-bt_prev01").on("click",function(){
-		$groupe03.removeClass(a);
-		setTimeout(function(){
-			$groupe02.addClass(a);
-		},500);
-	});
 
 	$(".p-post-follow__question_slide_pager-bt_next01").on("click",function(){
 		$slide.slick('slickNext');
@@ -184,9 +177,6 @@ $(function () {
 	$(".p-post-follow__question_slide_pager-bt_prev02").on("click",function(){
 		$slide.slick('slickPrev');
 	});
-
-		
-
 
 	//完了画面閉じるボタン
 	$(".p-post-follow-complete_close,.p-post-follow-complete").on("click",function(e){
