@@ -1,0 +1,156 @@
+.p-diseases-header__follow._is_follow
+    a.js_open_follow_modal(href="javascript:void(0);")
+        | この病気を登録する
+        //include ../../img/pc/disease/icon_plus.svg
+.p-post-follow
+    .p-post-follow__inner
+        a(href="javascript:void(0);").p-post-follow__close
+            img(src="/img/sp/common/icon_close_white.svg" alt="close" width="20" height="20")
+        form
+            .p-post-follow__header._is_active
+                span フォローが完了しました
+            .p-post-follow__description._is_active
+                | 今後、<span>$疾患名$</span>に関する新着記事や新着のユーザー投稿について、お客様ご登録のメールアドレスや公式アプリに情報を配信します。
+            .p-post-follow__balloon._is_active
+                p 治療状況をご回答頂く事で、より詳しい病気の情報や治療情報をお届けできるようになります。
+            img.p-post-follow__img._is_active(src="/img/sp/dummy/img_deseases_01.svg" width="100%")
+            .p-post-follow__question_treatment.first
+                p ご自身もしくはご家族が治療中<br>もしくは治療をご検討中ですか？
+            .p-post-follow__btn_area
+                button.p-post-follow__btn_treatment.js_treatment_click_yes(type="button") はい
+                button.p-post-follow__btn_treatment.js_treatment_click_no(type="button") いいえ
+            .p-post-follow__question_slide
+                div
+                    .p-post-follow__question_yes
+                        .p-post-follow__question_treatment
+                            dl
+                                dt ① 一番近いものをお選びください
+                                dd ( 1 /2問中 ) 
+                        .p-post-follow__radio01
+                            .c-radio
+                                input.c-radio__radio(name="question01_y" id="question01_1_y" type="radio" value="確定診断を受け、治療先検討中")
+                                label.c-radio__label(for="question01_1_y") 確定診断を受け、治療先検討中
+                            .c-radio
+                                input.c-radio__radio(name="question01_y" id="question01_2_y" type="radio" value="確定診断を受け、セカンドオピニオン先検討中")
+                                label.c-radio__label(for="question01_2_y") 確定診断を受け、セカンドオピニオン先検討中
+                            .c-radio
+                                input.c-radio__radio(name="question01_y" id="question01_3_y" type="radio" value="疾患疑いで、検査中")
+                                label.c-radio__label(for="question01_3_y") 疾患疑いで、検査中
+                            .c-radio
+                                input.c-radio__radio(name="question01_y" id="question01_4_y" type="radio" value="いずれも当てはまらない")
+                                label.c-radio__label(for="question01_4_y") いずれも当てはまらない
+                    .p-post-follow__question_no
+                        .p-post-follow__question_treatment
+                            dl
+                                dt ① 一番近いものをお選びください
+                                dd ( 1 /2問中 ) 
+                        .p-post-follow__radio01
+                            .c-radio
+                                input.c-radio__radio(name="question01_n" id="question01_1_n" type="radio" value="この病気に関心があるだけ")
+                                label.c-radio__label(for="question01_1_n") この病気に関心があるだけ
+                            .c-radio
+                                input.c-radio__radio(name="question01_n" id="question01_2_n" type="radio" value="今、この病気の罹患可能性を疑っている")
+                                label.c-radio__label(for="question01_2_n") 今、この病気の罹患可能性を疑っている
+                            .c-radio
+                                input.c-radio__radio(name="question01_n" id="question01_3_n" type="radio" value="将来的なこの病気の罹患可能性を心配している")
+                                label.c-radio__label(for="question01_3_n") 将来的なこの病気の罹患可能性を心配している
+                            .c-radio
+                                input.c-radio__radio(name="question01_n" id="question01_4_n" type="radio" value="医療従事者である")
+                                label.c-radio__label(for="question01_4_n") 医療従事者である
+                            .c-radio
+                                input.c-radio__radio(name="question01_n" id="question01_5_n" type="radio" value="いずれも当てはまらない")
+                                label.c-radio__label(for="question01_5_n") いずれも当てはまらない
+
+                div
+                    .p-post-follow__question_yes
+                        .p-post-follow__question_treatment
+                            dl
+                                dt ② 病気を治療中なのはどなたですか？
+                                dd ( 2 /2問中 ) 
+                        .p-post-follow__radio02
+                            .c-radio
+                                input.c-radio__radio(name="question02_y" id="question02_1_y" type="radio" value="ご本人")
+                                label.c-radio__label(for="question02_1_y") ご本人
+                            .c-radio
+                                input.c-radio__radio(name="question02_y" id="question02_2_y" type="radio" value="配偶者様")
+                                label.c-radio__label(for="question02_2_y") 配偶者様
+                            .c-radio
+                                input.c-radio__radio(name="question02_y" id="question02_3_y" type="radio" value="お子様")
+                                label.c-radio__label(for="question02_3_y") お子様
+                            .c-radio
+                                input.c-radio__radio(name="question02_y" id="question02_4_y" type="radio" value="ご両親")
+                                label.c-radio__label(for="question02_4_y") ご両親
+                            .c-radio
+                                input.c-radio__radio(name="question02_y" id="question02_5_y" type="radio" value="その他")
+                                label.c-radio__label(for="question02_5_y") その他
+                    .p-post-follow__question_no
+                        .p-post-follow__question_treatment
+                            dl
+                                dt ② 一番近いものをお選びください
+                                dd ( 2 /2問中 ) 
+                        .p-post-follow__radio02
+                            .c-radio.p-post-follow__radio02_a
+                                input.c-radio__radio(name="question02_n" id="question02_1_n" type="radio" value="健康診断で指摘があった")
+                                label.c-radio__label(for="question02_1_n") 健康診断で指摘があった
+                            .c-radio.p-post-follow__radio02_a
+                                input.c-radio__radio(name="question02_n" id="question02_2_n" type="radio" value="自身で初期症状を感じた")
+                                label.c-radio__label(for="question02_2_n") 自身で初期症状を感じた
+                            .c-radio.p-post-follow__radio02_a
+                                input.c-radio__radio(name="question02_n" id="question02_3_n" type="radio" value="いずれも当てはまらない")
+                                label.c-radio__label(for="question02_3_n") いずれも当てはまらない
+                            .c-radio.p-post-follow__radio02_b
+                                input.c-radio__radio(name="question02_n" id="question02_4_n" type="radio" value="二親等以内にこの病気に罹った人がいる")
+                                label.c-radio__label(for="question02_4_n") 二親等以内にこの病気に罹った人がいる
+                            .c-radio.p-post-follow__radio02_b
+                                input.c-radio__radio(name="question02_n" id="question02_5_n" type="radio" value="自身の生活習慣から不安を感じる")
+                                label.c-radio__label(for="question02_5_n") 自身の生活習慣から不安を感じる
+                            .c-radio.p-post-follow__radio02_b
+                                input.c-radio__radio(name="question02_n" id="question02_6_n" type="radio" value="いずれも当てはまらない")
+                                label.c-radio__label(for="question02_6_n") いずれも当てはまらない
+            ul.p-post-follow__question_slide_pager
+                li.p-post-follow__question_slide_pager-bt_prev <
+                li.p-post-follow__question_slide_pager-bt_01 ・
+                li.p-post-follow__question_slide_pager-bt_02 ・
+                li.p-post-follow__question_slide_pager-bt_03._is_hide ・
+                li.p-post-follow__question_slide_pager-bt_next >
+.p-post-follow-complete
+    .p-post-follow-complete__inner
+        .p-post-follow-complete__result01
+            .p-post-follow-complete_title
+                | ご回答ありがとうございました
+            .p-post-follow-complete_description
+                | ご治療リクエストの案内情報テキストテキストテキストテキストテキストテキストテキストテキスト
+            .p-post-follow-complete_subtitle
+                | 治療リクエストとは？
+            img.p-post-follow-complete__img(src="/img/sp/dummy/img_deseases_02.svg" width="100%")
+            .p-post-follow-complete_btm-area
+                p.p-post-follow-complete_btm-area_title
+                    | 治療リクエストして医師と繋がる
+                p.p-post-follow-complete_btm-area_description
+                    | 促しテキストとか入りますかな？促しテキストとか入りますかな促しテキストとか入りますか
+                buttom.p-post-follow-complete_btm-area_btn
+                    | この疾患の話を聞きたい
+            a.p-post-follow-complete_close(href="") 
+                img(src="/img/sp/common/icon_close.svg" alt="" width="14" height="14")
+                span 閉じる
+        .p-post-follow-complete__result02
+            .p-post-follow-complete_title
+                | ご回答ありがとうございました
+            .p-post-follow-complete_description
+                | ご治療リクエストの案内情報テキストテキストテキストテキストテキストテキストテキストテキスト
+            .p-post-follow-complete_subtitle
+                | 治療リクエストとは？
+            img.p-post-follow-complete__img(src="/img/sp/dummy/img_deseases_02.svg" width="100%")
+            .p-post-follow-complete_btm-area
+                p.p-post-follow-complete_btm-area_title
+                    | ご心配な症状や受診の目安について<br>医療相談をご利用ください
+                p.p-post-follow-complete_btm-area_description
+                    | 促しテキストとか入りますかな？促しテキストとか入りますかな促しテキストとか入りますか
+                .p-post-follow-complete_btm-area_banner
+                    a(href="")
+                        img(src="/img/sp/disease/banner_itunes.png" alt="")
+                    a(href="")
+                        img(src="/img/sp/disease/banner_googleplay.png" alt="")
+            a.p-post-follow-complete_close(href="") 
+                img(src="/img/sp/common/icon_close.svg" alt="" width="14" height="14")
+                span 閉じる

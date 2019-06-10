@@ -1,22 +1,309 @@
-.slide {
-    width: 200px;
-    padding: 20px;
-    box-sizing: border-box;
+.p-post-follow {
     display: none;
-    margin: 0 auto;
-    background: #efefef;
-}
-
-.p-post-follow__complete {
-    width: 200px;
-    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.65);
+    z-index: 20;
+    align-items: center;
+    justify-content: center;
+  }
+  .p-post-follow._is_active {
+    display: flex;
+  }
+  .p-post-follow__inner {
+    background-color: #fff;
+    padding: 36px 18px 25px;
+    margin: 15px;
+    border-radius: 3px;
+    position: relative;
     box-sizing: border-box;
+    width: 100%;
+    max-width: 480px;
+  }
+  .p-post-follow__close {
+    position: absolute;
+    right: -8px;
+    top: -8px;
+  }
+  .p-post-follow__header {
     display: none;
-    margin: 0 auto;
-    background: #efefef;
-}
-
-._is_active {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #000;
+    font-weight: bold;
+    font-size: 1.6rem;
+    letter-spacing: 0.075em;
+    border-radius: 6px;
+    line-height: 1.5;
+    margin: 0 0 32px 0;
+  }
+  .p-post-follow__header._is_active {
+    display: flex;
+  }
+  .p-post-follow__description {
+    display: none;
+    line-height: 1.5;
+    margin: 0 0 20px 0;
+  }
+  .p-post-follow__description span {
+    color: #27b1db;
+  }
+  .p-post-follow__description._is_active {
+    display: inline-block;
+  }
+  .p-post-follow__balloon {
+    position: relative;
+    display: none;
+    margin: 1.5em 0;
+    padding: 7px 10px;
+    min-width: 120px;
+    max-width: 100%;
+    color: #555;
+    line-height: 1.5;
+    font-size: 1.3rem;
+    background: #faf9f9;
+    border-radius: 8px;
+    border: solid 1px #27b1db;
+    box-sizing: border-box;
+  }
+  .p-post-follow__balloon._is_active {
+    display: inline-block;
+  }
+  .p-post-follow__balloon:before {
+    content: "";
+    position: absolute;
+    bottom: -22px;
+    left: 50%;
+    margin-left: -17px;
+    border: 8px solid transparent;
+    border-top: 14px solid #faf9f9;
+    z-index: 2;
+  }
+  .p-post-follow__balloon :after {
+    content: "";
+    position: absolute;
+    bottom: -23px;
+    left: 50%;
+    margin-left: -17px;
+    border: 8px solid transparent;
+    border-top: 14px solid #27b1db;
+    z-index: 1;
+  }
+  .p-post-follow__balloon p {
+    margin: 0;
+    padding: 8px 8px;
+  }
+  .p-post-follow__img {
+    display: none;
+  }
+  .p-post-follow__img._is_active {
+    display: inline-block;
+  }
+  .p-post-follow__question_treatment {
+    background: #f2f2f2;
+    border-radius: 6px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.5;
+    padding: 10px;
+    margin: 28px 0 20px 0;
+  }
+  .p-post-follow__question_treatment.first {
+    margin: 0 0 28px 0;
+  }
+  .p-post-follow__question_treatment dl {
+    text-align: left;
+  }
+  .p-post-follow__question_treatment dl dd {
+    font-weight: normal;
+    font-size: 1.2rem;
+    padding: 0 0 0 2rem;
+  }
+  .p-post-follow__btn_area {
+    display: flex;
+    justify-content: center;
+  }
+  .p-post-follow__btn_treatment {
+    background: #f2f2f2;
+    border: none;
+    border-radius: 4px;
+    color: #000;
+    font-size: 1.4rem;
+    font-weight: bold;
+    width: 100px;
+    padding: 4px 0;
+  }
+  .p-post-follow__btn_treatment:first-child {
+    margin-right: 20px;
+  }
+  .p-post-follow__btn_treatment._is_active {
+    background: #27b1db;
+    color: #fff;
+  }
+  .p-post-follow__question_yes, .p-post-follow__question_no, .p-post-follow__radio02_a, .p-post-follow__radio02_b {
+    display: none;
+  }
+  .p-post-follow__question_yes._is_active, .p-post-follow__question_no._is_active, .p-post-follow__radio02_a._is_active, .p-post-follow__radio02_b._is_active {
     display: block;
-}
-
+  }
+  .p-post-follow__question_slide {
+    display: none;
+    max-width: 306px;
+    margin: 0 auto;
+  }
+  .p-post-follow__question_slide._is_active {
+    display: block;
+  }
+  .p-post-follow__radio01, .p-post-follow__radio02, .p-post-follow__radio03 {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.5;
+    font-size: 1.4rem;
+    font-weight: bold;
+    padding: 0 20px;
+  }
+  .p-post-follow__radio01 .c-radio, .p-post-follow__radio02 .c-radio, .p-post-follow__radio03 .c-radio {
+    padding: 0 0 20px 0;
+  }
+  .p-post-follow__radio01 label, .p-post-follow__radio02 label, .p-post-follow__radio03 label {
+    cursor: pointer;
+  }
+  .p-post-follow__radio01 label:after, .p-post-follow__radio02 label:after, .p-post-follow__radio03 label:after {
+    top: 5px !important;
+  }
+  .p-post-follow__radio01 label:before, .p-post-follow__radio01 label:after, .p-post-follow__radio02 label:before, .p-post-follow__radio02 label:after, .p-post-follow__radio03 label:before, .p-post-follow__radio03 label:after {
+    bottom: auto !important;
+  }
+  .p-post-follow__question_slide_pager {
+    display: none;
+    justify-content: center;
+    font-weight: bold;
+    padding: 20px 0 0 0;
+  }
+  .p-post-follow__question_slide_pager._is_active {
+    display: flex;
+  }
+  .p-post-follow__question_slide_pager-bt_prev {
+    padding: 0 10px 0 0;
+    color: #7cd6e6;
+    cursor: pointer;
+  }
+  .p-post-follow__question_slide_pager-bt_01, .p-post-follow__question_slide_pager-bt_02, .p-post-follow__question_slide_pager-bt_03 {
+    cursor: pointer;
+    color: #c4c4c4;
+  }
+  .p-post-follow__question_slide_pager-bt_01._is_active, .p-post-follow__question_slide_pager-bt_02._is_active, .p-post-follow__question_slide_pager-bt_03._is_active {
+    color: #7cd6e6;
+  }
+  .p-post-follow__question_slide_pager-bt_01._is_hide, .p-post-follow__question_slide_pager-bt_02._is_hide, .p-post-follow__question_slide_pager-bt_03._is_hide {
+    display: none;
+  }
+  .p-post-follow__question_slide_pager-bt_next {
+    padding: 0 0 0 10px;
+    color: #7cd6e6;
+    cursor: pointer;
+  }
+  .p-post-follow-complete {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.65);
+    z-index: 20;
+    align-items: center;
+    justify-content: center;
+  }
+  .p-post-follow-complete._is_active {
+    display: flex;
+  }
+  .p-post-follow-complete__inner {
+    background-color: #fff;
+    padding: 36px 18px 25px;
+    margin: 15px;
+    border-radius: 3px;
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 480px;
+  }
+  .p-post-follow-complete__result01, .p-post-follow-complete__result02 {
+    display: none;
+  }
+  .p-post-follow-complete__result01._is_active, .p-post-follow-complete__result02._is_active {
+    display: block;
+  }
+  .p-post-follow-complete_title {
+    font-weight: bold;
+    font-size: 1.6rem;
+    text-align: center;
+    margin: 0 0 30px 0;
+  }
+  .p-post-follow-complete_description {
+    line-height: 1.5;
+    margin: 0 0 20px 0;
+  }
+  .p-post-follow-complete_subtitle {
+    font-weight: bold;
+    margin: 0 0 20px 0;
+  }
+  .p-post-follow-complete__img {
+    margin: 0 0 30px 0;
+  }
+  .p-post-follow-complete_btm-area {
+    padding: 14px 25px;
+    background: #f7f1e8;
+    border-radius: 8px;
+    line-height: 1.5;
+  }
+  .p-post-follow-complete_btm-area_title {
+    font-weight: bold;
+    margin: 0 0 20px 0;
+  }
+  .p-post-follow-complete_btm-area_description {
+    font-size: 1.2;
+    margin: 0 0 20px 0;
+  }
+  .p-post-follow-complete_btm-area_btn {
+    display: block;
+    margin: 0 auto;
+    width: 222px;
+    background: #fc8d88;
+    font-weight: bold;
+    border-radius: 50px;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+  }
+  .p-post-follow-complete_btm-area_banner {
+    display: flex;
+    justify-content: space-between;
+  }
+  .p-post-follow-complete_btm-area_banner a {
+    width: 48%;
+  }
+  .p-post-follow-complete_btm-area_banner a img {
+    width: 100%;
+  }
+  .p-post-follow-complete_close {
+    display: inline-block;
+    position: absolute;
+    bottom: -40px;
+    left: calc(50% - 35px);
+    background: #efefef;
+    border-radius: 100px;
+    padding: 5px;
+    vertical-align: middle;
+  }
+  .p-post-follow-complete_close img {
+    margin: 0 5px 0 0;
+  }
+  .p-post-follow .slick-arrow {
+    display: none;
+  }
