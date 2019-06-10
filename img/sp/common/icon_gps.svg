@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ddd;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="icon_gps.svg" class="cls-1" d="M182,374l16-6-5.991,16L190,376Z" transform="translate(-182 -368)"/>
+</svg>

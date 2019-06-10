@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="22" height="29" viewBox="0 0 22 29">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="icon_phone.svg" class="cls-1" d="M77.931,18438.7l-1.46.8c-8.541,4.4-23.353-21.1-15.027-26l1.4-.7,4.545,7.8-1.394.7c-2.53,1.5,3.378,11.8,5.971,10.4l1.422-.8Zm-12-27.7-2.056,1.2,4.545,7.8,2.057-1.2Zm10.541,18.1-2.056,1.2,4.545,7.8,2.057-1.2Z" transform="translate(-59 -18411)"/>
+</svg>
