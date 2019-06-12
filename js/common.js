@@ -15,29 +15,27 @@ $(function () {
 		scrollPosition = $(window).scrollTop();
         $('body').addClass('fixed').css({'top': -scrollPosition});
         $slide.on('afterChange', function(event, slick, currentSlide){
-					if(0 === currentSlide) {
-						$(".p-post-follow__question_slide_pager-bt_02").addClass(a);
-						$(".p-post-follow__question_slide_pager-bt_03").removeClass(a);
-						$(".p-post-follow__question_slide_pager-bt_prev01,.p-post-follow__question_slide_pager-bt_next01").addClass(a);
-						$(".p-post-follow__question_slide_pager-bt_prev02,.p-post-follow__question_slide_pager-bt_next02").removeClass(a);
-					} else if(1 === currentSlide) {
-						$(".p-post-follow__question_slide_pager-bt_02").removeClass(a);
-						$(".p-post-follow__question_slide_pager-bt_03").addClass(a);
-						$(".p-post-follow__question_slide_pager-bt_prev01,.p-post-follow__question_slide_pager-bt_next01").removeClass(a);
-						$(".p-post-follow__question_slide_pager-bt_prev02,.p-post-follow__question_slide_pager-bt_next02").addClass(a);
-					}
+			if(0 === currentSlide) {
+				$(".p-post-follow__question_slide_pager-bt_02").addClass(a);
+				$(".p-post-follow__question_slide_pager-bt_03").removeClass(a);
+				$(".p-post-follow__question_slide_pager-bt_prev01,.p-post-follow__question_slide_pager-bt_next01").addClass(a);
+				$(".p-post-follow__question_slide_pager-bt_prev02,.p-post-follow__question_slide_pager-bt_next02").removeClass(a);
+			} else if(1 === currentSlide) {
+				$(".p-post-follow__question_slide_pager-bt_02").removeClass(a);
+				$(".p-post-follow__question_slide_pager-bt_03").addClass(a);
+				$(".p-post-follow__question_slide_pager-bt_prev01,.p-post-follow__question_slide_pager-bt_next01").removeClass(a);
+				$(".p-post-follow__question_slide_pager-bt_prev02,.p-post-follow__question_slide_pager-bt_next02").addClass(a);
+			}
         });
-		$slide.slick({
+		$slide.not('.slick-initialized').slick({
 			infinite: false
 		});
     });
     
-
-
 	// モーダルCLOSE
 	var $closeFollowModal = $(".p-post-follow__close,.p-post-follow"),
-	$groupe01 = $(".p-post-follow,.js_treatment_click_yes,.js_treatment_click_no,.p-post-follow__question_slide,.p-post-follow__question_slide_pager,.p-post-follow__question_slide_pager-bt_02,.p-post-follow__btn_area_wrap,.p-post-follow__inner"),
-	$groupe02 = $(".p-post-follow__header,.p-post-follow__description,.p-post-follow__balloon,.p-post-follow__img"),
+	$groupe01 = $(".p-post-follow,.js_treatment_click_yes,.js_treatment_click_no,.p-post-follow__question_slide,.p-post-follow__question_slide_pager,.p-post-follow__question_slide_pager-bt_02,.p-post-follow__btn_area_wrap,.p-post-follow__inner,.p-post-follow-complete__result01,.p-post-follow-complete__result02"),
+	$groupe02 = $(".p-post-follow__header,.p-post-follow__description,.p-post-follow__balloon,.p-post-follow__img,.p-post-follow-complete__result01,.p-post-follow-complete__result02"),
 	$groupe03 = $(".js_treatment_click_yes,.js_treatment_click_no,.p-post-follow__question_slide,.p-post-follow__question_slide_pager,.p-post-follow__question_slide_pager-bt_02,.p-post-follow__btn_area_wrap,.p-post-follow__inner");
 
 	$closeFollowModal.on("click",function(){ //CLOSE処理
@@ -45,7 +43,7 @@ $(function () {
 		$groupe01.removeClass(a);
 		$groupe02.addClass(a);
 		$('body').removeClass('fixed').css({'top': 0});
-    window.scrollTo( 0 , scrollPosition );
+    	window.scrollTo( 0 , scrollPosition );
 	});
 
 	$(".p-post-follow__inner").on("click",function(e){ //モーダル内クリック処理停止
@@ -54,44 +52,44 @@ $(function () {
 
 	// 最初の設問「はい」をクリック
 	$(".js_treatment_click_yes").on("click",function(){
+		$(this).addClass(a);
 		$(".js_treatment_click_no").removeClass(a);
 		$groupe02.removeClass(a);
 		$(".p-post-follow__btn_area_wrap").addClass(a);
 		$(".p-post-follow__inner").addClass(a);
+		$(".p-post-follow__question_no").removeClass(a);
+		$(".p-post-follow__question_yes").addClass(a);
+		$('.p-post-follow__radio01 input,.p-post-follow__radio02 input').prop('checked', false);
+		$(".p-post-follow__question_slide_pager-bt_02").addClass(a);
 		setTimeout(function(){
-			$('.p-post-follow__radio01 input,.p-post-follow__radio02 input').prop('checked', false);
-			$(this).addClass(a);
 			$slide.addClass(a);
 			$pager.addClass(a);
-			$(".p-post-follow__question_slide_pager-bt_02").addClass(a);
 			$slide.slick('slickUnfilter');
 			$slide.slick('slickFilter', ':even');
-			$(".p-post-follow__question_no").removeClass(a);
-			$(".p-post-follow__question_yes").addClass(a);
 			$(".p-post-follow__question_slide_pager-bt_prev01").addClass(a);
-			$(".p-post-follow__question_slide_pager-bt_next01,.p-post-follow__question_slide_pager-bt_prev02,.p-post-follow__question_slide_pager-bt_next02").removeClass(a);
+			$(".p-post-follow__question_slide_pager-bt_next,.p-post-follow__question_slide_pager-bt_prev02").removeClass(a);
 			$(".p-post-follow__question_slide_pager-bt_03").addClass(h);
 		},500);
 	});
 
 	// 最初の設問「いいえ」をクリック
 	$(".js_treatment_click_no").on("click",function(){
+		$(this).addClass(a);
 		$(".js_treatment_click_yes").removeClass(a);
 		$groupe02.removeClass(a);
 		$(".p-post-follow__btn_area_wrap").addClass(a);
 		$(".p-post-follow__inner").addClass(a);
+		$('.p-post-follow__radio01 input,.p-post-follow__radio02 input').prop('checked', false);
+		$(".p-post-follow__question_slide_pager-bt_02").addClass(a);
+		$(".p-post-follow__question_yes").removeClass(a);
+		$(".p-post-follow__question_no").addClass(a);
 		setTimeout(function(){
-			$('.p-post-follow__radio01 input,.p-post-follow__radio02 input').prop('checked', false);
-			$(this).addClass(a);
 			$slide.addClass(a);
 			$pager.addClass(a);
-			$(".p-post-follow__question_slide_pager-bt_02").addClass(a);
 			$slide.slick('slickUnfilter');
 			$slide.slick('slickFilter', ':even');
-			$(".p-post-follow__question_yes").removeClass(a);
-			$(".p-post-follow__question_no").addClass(a);
 			$(".p-post-follow__question_slide_pager-bt_prev01").addClass(a);
-			$(".p-post-follow__question_slide_pager-bt_next01,.p-post-follow__question_slide_pager-bt_prev02,.p-post-follow__question_slide_pager-bt_next02").removeClass(a);
+			$(".p-post-follow__question_slide_pager-bt_next,.p-post-follow__question_slide_pager-bt_prev02").removeClass(a);
 			$(".p-post-follow__question_slide_pager-bt_03").addClass(h);
 		},500);
 	});
@@ -113,6 +111,8 @@ $(function () {
 			$slide.slick('slickNext');
 			$(".p-post-follow__radio02_a").addClass(a);
 			$(".p-post-follow__radio02_b").removeClass(a);
+			$(".p-post-follow__question_yes").removeClass(a);
+			$(".p-post-follow__question_no").addClass(a);
 			$(".p-post-follow__question_slide_pager-bt_03").removeClass(h);
 			$(".p-post-follow__question_slide_pager-bt_03").addClass(a);
 		} else if ("question01_3_n"　===　radioId) {
@@ -168,7 +168,7 @@ $(function () {
 
 	$(".p-post-follow__question_slide_pager-bt_03").on("click",function(){
 		$slide.slick('slickGoTo', 1);
-  });
+  	});
 
 	$(".p-post-follow__question_slide_pager-bt_next01").on("click",function(){
 		$slide.slick('slickNext');
