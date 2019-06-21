@@ -1,38 +1,33 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import './App.css';
-import Memo from './memo/Memo';
-import AddForm from './memo/AddForm';
-import FindForm from './memo/FindForm';
-import DelForm from './memo/DelForm';
-import PersistForm from './memo/PersistForm';
+import Sampledata from './fire/Sampledata';
+import firebase from 'firebase';
+
+// Your web app's Firebase configuration
+var firebaseConfig = {
+  apiKey: "AIzaSyDnxOGx_4EyROacLvmPRZcYlU86LQ_LF2A",
+  authDomain: "react-next-a7834.firebaseapp.com",
+  databaseURL: "https://react-next-a7834.firebaseio.com",
+  projectId: "react-next-a7834",
+  storageBucket: "",
+  messagingSenderId: "951860818475",
+  appId: "1:951860818475:web:16a0dfbddf8c98e4"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
 
 // Appコンポーネント
 class App extends Component {
-  td = {
-    width:"250px"
-  }
-
-
-  constructor(props){
-    super(props);
-  }
 
   render() {
     return (
       <div>
-        <h1>Memo</h1>
-        <AddForm />
-        <hr />
-        <table><tbody><tr>
-          <td style={this.td}><FindForm /></td>
-          <td style={this.td}><DelForm /></td>
-          <td style={this.td}><PersistForm /></td>
-        </tr></tbody></table>
-        <Memo />
+        <h1>Fire</h1>
+        <h2>Sample data</h2>
+        <Sampledata />
       </div>
-    );
+    )
   }
 }
 
-export default connect()(App);
+export default App;

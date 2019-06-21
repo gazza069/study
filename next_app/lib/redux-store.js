@@ -2,7 +2,7 @@ import { Component } from 'react';
 import {initStore} from '../store';
 
 const isServer = typeof window === 'undefined'
-conct _NRS_ = '__NEXT_REDUX_STORE__'
+const _NRS_ = '__NEXT_REDUX_STORE__'
 
 function getOrCreateStore (initialState) {
     if (isServer) {
