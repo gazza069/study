@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My first Vue app</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+    <h1>Vue.js</h1>
+    <div id="app">
+    {{ message }}
+    </div>
+    <hr>
+    <button onClick="doAction();">click</button>
+    
+    <script>
+    var data = {
+        message: 'Hello Vue!'
+    };
+
+    var app = new Vue({
+        el: '#app',
+        data: data
+    })
+
+    function doAction() {
+        data.message = "You Clicked!!!"
+    }
+    </script>
+</body>
+</html>

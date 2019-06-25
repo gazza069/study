@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My first Vue app</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+    <style>
+    table tr th {
+        font-size:16pt;
+        color:white;
+        background-color:blue;
+        padding: 5px 15px;
+    }
+    table tr td {
+        font-size:16pt;
+        color:gray;
+        border:1px solid gray;
+    }
+    li {
+        font-size:16pt;
+        color:gray;
+    }
+    </style>
+    <h1>Vue.js</h1>
+    <div id="app">
+        <template v-if="flag">
+            <p>※データをテーブル表示する</p>
+            <table>
+                <tr><th>Name</th><th>mail</th></tr>
+                <tr><td>Taro</td><td>taro@yamada</td></tr>
+                <tr><td>Hanako</td>hanako@frower<td></td></tr>
+                <tr><td>Sachiko</td><td>sachiko@happy</td></tr>
+            </table>
+        </template>
+        <template v-else>
+            <p>※データをリスト表示する</p>
+            <ul>
+                <li>Taroのアドレスは、taro@yamadaです。</li>
+                <li>hanakoのアドレスは、hanako@flowerです。</li>
+                <li>Sachikoのアドレスは、shachiko@happyです。</li>
+            </ul>
+        </template>
+    </div>
+    <button onclick="doAction();">click</button>
+
+    <script>
+    var data = {
+        flag:true
+    };
+
+    var app = new Vue({
+        el: '#app',
+        data: data
+    });
+
+    function doAction() {
+        data.flag = !data.flag;
+    }
+    </script>
+</body>
+</html>
