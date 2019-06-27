@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <HelloWorld title="validate" />
+    <HelloWorld title="JSX?">
+    </HelloWorld>
   </div>
 </template>
 
@@ -14,8 +15,11 @@ export default {
   },
   data: function(){
     return {
-      message:'validate',
-      num: 101,
+      slotobjs: [
+        {name:'Taro', mail:'taro@yamada'},
+        {name:'Hanako', mail:'hanako@flower'},
+        {name:'Sachiko', mail:'sachiko@happy'},
+      ],
     };
   }
 }

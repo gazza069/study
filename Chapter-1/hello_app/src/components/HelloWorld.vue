@@ -1,14 +1,15 @@
 <template>
   <div class="hello">
-    <h1>{{ title }}</h1>
-    <pre v-on:click="clear">{{ message }}</pre>
-    <hr>
-    <div id="out" class="out" v-on:click="a_event">A
-      <div id="mid" class="mid" v-on:click.self="b_event">B
-        <div id="in" class="in" v-on:click="c_event">C
-        </div>
-      </div>
-    </div>
+    <h1>{{title}}</h1>
+    <p>{{message}}</p>
+    <hr/>
+    <button v-on:click="doAction">
+      Show/Hide
+    </button>
+    <br><br>
+    <transition name="transit">
+      <p v-if="flg" class="trans">Transition!</p>
+    </transition>
   </div>
 </template>
 
@@ -16,34 +17,76 @@
 export default {
   name: 'HelloWorld',
   props: {
-    title: String, 
+    title:String,
   },
-  data: function(){
+  data: function() {
     return {
-      message: '',
+      message:'Transition Sample',
+      flg:true,
+      btn:'Hide',
     };
   },
-  methods: {
-    a_event: function(event){
-      this.message += "A-Event [" + event.target.id 
-        + ' → ' + event.currentTarget .id + "]\n";
+  methods:{
+    doAction: function(){
+      this.flg = !this.flg;
     },
-    b_event: function(event){
-      this.message += "B-Event [" + event.target.id 
-        + ' → ' + event.currentTarget .id + "]\n";
-    },
-    c_event: function(event){
-      this.message += "C-Event [" + event.target.id 
-        + ' → ' + event.currentTarget .id + "]\n";
-    },
-    clear: function(){
-      this.message = '';
-    }
   },
 }
 </script>
 
 <style>
+.trans {
+  width: 150px;
+  background-color: #ddf;
+  padding:10px;
+  font-size:20pt;
+}
+
+.transit-enter-active {
+  animation: anim 2.5s reverse;
+}
+.transit-leave-active {
+  animation: anim 5.0s;
+}
+
+@keyframes anim {
+  0% {
+    transform: translateX(0px) translateY(0px) rotateZ(0deg);
+    opacity:1.0;
+    background-color: #ddf;
+  }
+  25% {
+    transform: translateX(250px) translateY(0px) rotateZ(0deg);
+    opacity:1.0;
+    background-color: #fdd;
+  }
+  50% {
+    transform: translateX(0px) translateY(-100px) rotateZ(540deg);
+    opacity:1.0;
+    background-color: #dfd;
+  }
+  75% {
+    transform: translateX(250px) translateY(-100px) rotateZ(540deg);
+    opacity:1.0;
+    background-color: #fdf;
+  }
+  100% {
+    transform: translateX(0px) translateY(-200px) rotateZ(1080deg);
+    opacity:0;
+    background-color: #fdf;
+  }
+}
+
+.transit-enter-to {
+  opacity: 1;
+}
+.transit-leave {
+  opacity: 1;
+}
+.transit-enter, .transit-leave-to {
+  transform: rotateZ(360deg);
+  opacity: 0.1;
+}
 div {
   margin:0;
   padding: 0;
@@ -83,5 +126,22 @@ div.in {
   background-color: #ccc;
   width:100px;
   height:150px;
+}
+.area {
+  width:300px;
+  height:100px;
+  background-color: #ddd;
+  padding:10px;
+  font-size:20pt;
+}
+.inner {
+  color:red;
+  font-size: 14pt;
+}
+.etc {
+  color:green;
+  background-color: #eee;
+  font-size:12pt;
+  padding:5px;
 }
 </style>
